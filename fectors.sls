@@ -14,6 +14,7 @@
 (library (fectors)
 (export make-fector
         fector
+        fector?
         fector-length
         build-fector
         fector-ref
