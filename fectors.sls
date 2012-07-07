@@ -11,6 +11,43 @@
 ;; You should have received a copy of the BSD license along with this
 ;; program. If not, see <http://www.debian.org/misc/bsd.license>.
 
+;;; Documentation
+;;
+;; make-fector :: Int [ Object ] -> Fector
+;; Returns a fector of a specified size. If the fill parameter is
+;; given, the locations of the fector are initialised to that object,
+;; otherwise their initial values are unspecified.
+;;
+;; fector :: [Object ...] -> Fector
+;; Returns a fector whose initial values are given as arguments.
+;;
+;; fector? :: Object -> Boolean
+;; Returns #t if a given object is a fector, #f otherwise.
+;;
+;; fector-length :: Fector -> Int
+;; Returns the number of elements that are stored in the fector.
+;;
+;; build-fector :: Int (Int -> Object) -> Fector
+;; returns a new fector of a given length, where each element is
+;; initialised to the value of the given function applied to its index.
+;;
+;; fector-ref :: Fector Int -> Object
+;; Returns the value associated with a given index into the fector. If
+;; the index is outwith the range 0 <= index < length, then an
+;; &assertion-violation is raised.
+;;
+;; fector-set :: Fector Int Object -> Fector
+;; Returns a new fector equivalent to the previous one except the
+;; given index is now associated with a given object. If the index is
+;; outwith the range 0 <= index < length, then an &assertion-violation
+;; is raised.
+;;
+;; list->fector ;; Listof(Object) -> Fector
+;; Returns a fector initialised with the contents of the given list.
+;;
+;; fector->list :: Fector -> Listof(Object)
+;; Returns a list containing the objects in a given fector.
+;;
 (library (fectors)
 (export make-fector
         fector
