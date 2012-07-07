@@ -69,7 +69,8 @@
       (unless (= i n)
         (vector-set! v i (f i))
         (populate! (+ i 1))))
-    (populate! 0)))
+    (populate! 0)
+    v))
 
 ;;; Main
 (define-record-type (<fector> %make-fector fector?)
