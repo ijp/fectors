@@ -34,13 +34,13 @@
 ;; fector-ref :: Fector Int -> Object
 ;; Returns the value associated with a given index into the fector. If
 ;; the index is outwith the range 0 <= index < length, then an
-;; &assertion-violation is raised.
+;; &assertion is raised.
 ;;
 ;; fector-set :: Fector Int Object -> Fector
 ;; Returns a new fector equivalent to the previous one except the
 ;; given index is now associated with a given object. If the index is
-;; outwith the range 0 <= index < length, then an &assertion-violation
-;; is raised.
+;; outwith the range 0 <= index < length, then an &assertion is
+;; raised.
 ;;
 ;; list->fector ;; Listof(Object) -> Fector
 ;; Returns a fector initialised with the contents of the given list.
@@ -100,7 +100,10 @@
 
 (define (fector-ref fector index)
   (reroot! fector)
-  (vector-ref (fector-value fector) index))
+  (let ((vector (fector-value fector)))
+    (assert (and (<= 0 index)
+                 (< index (vector-length vector))))
+    (vector-ref vector index)))
 
 (define (fector-set fector index object)
   (reroot! fector)
