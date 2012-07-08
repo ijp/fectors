@@ -22,8 +22,8 @@ I'd like to thank David Van Horn, whose racket library brought this to
 my attention[2], and from whom I shamelessly stole the name, and
 transitively, Sylvain Conchon and Jean-Christophe Filliâtre for
 bringing it to his[3], and Henry Baker for coming up with the idea in
-the first place[4].
-
+the first place[4]. Also, Marco Maggi[5] who has graciously provided a
+test suite for Vicare Scheme.
 
 * Footnotes
 
@@ -34,3 +34,5 @@ the first place[4].
 [3] [[http://www.lri.fr/~filliatr/ftp/publis/puf-wml07.pdf][A Persistent Union-Find Data Structure]]
 
 [4] [[http://home.pipeline.com/~hbaker1/ShallowBinding.ps.gz][Shallow Binding in Lisp 1.5]]
+
+[5] http://marcomaggi.github.com/
