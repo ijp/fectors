@@ -1,6 +1,7 @@
 ;;; test-vicare.sps --- Functional Vectors: tests with Vicare Scheme
 
 ;; Copyright (C) 2012 Marco Maggi <marco.maggi-ipsu@poste.it>
+;; Copyright (C) 2012 Ian Price <ianprice90@googlemail.com>
 
 ;; Author: Marco Maggi <marco.maggi-ipsu@poste.it>
 
@@ -38,12 +39,6 @@
 
 
 ;;;; building fectors
-
-(check
-    (let ((F (make-fector 5)))
-      (and (fector? F)
-	   (fector->list F)))
-  => '(0 0 0 0 0))
 
 (check
     (let ((F (make-fector 5 #\a)))
