@@ -9,7 +9,7 @@
         (fectors))
 
 (define-record-type union-find
-  (fields parents ranks))
+  (fields (mutable parents) ranks))
 
 (define (make n)
   (make-union-find (build-fector n values)
